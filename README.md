@@ -27,16 +27,16 @@ Example:
 Example:
 <img src="./assets/data.png"/>
 
-## <b>Training Model Step by Step</b>
-0. <red>Note: <red> (*): <b>The signal requiring setting<b>.
-1. Train Tokenizer: <code>python data.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --iterations {ITERATIONS} --sigma {SIGMA}</code>
-With: 
+## <b>Training Model Step by Step</b> <br>
+<b>(*): The signal requiring setting</b>.
+1. Train Tokenizer: <code>python data.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --iterations {ITERATIONS} --sigma {SIGMA}</code> <br>
 - <code>(*)DATA_SAMPLE_PATH</code>: Your txt file storing all data samples.
 - <code>(*)TOKENIZER_PATH</code>: Path where stores your tokenizer after training (If path is None, tokenizer learns from scratch otherwise tokenizer continues training from previous session)
 - <code>(*)ITERATIONS</code>: Maximum loop which is used for training Tokenizer.
-- <code>SIGMA</code>: SIGMA = (Num(tokens_whitespece))/(Num(tokens_trained))
+- <code>SIGMA</code>: SIGMA = (Num(tokens_whitespece)) / (Num(tokens_trained)), default is 2.
 
-2. Proprocessing Data - Digitize Text Data:: <code>python process.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --max_length {MAX_LENGTH} --clean_path {CLEAN_PATH}</code>
-With:
+2. Proprocessing Data - Digitize Text Data:: <code>python process.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --max_length {MAX_LENGTH} --clean_path {CLEAN_PATH}</code> <br>
 - <code>MAX_LENGTH</code>: The number of contexts that you want to set, default is None. If its value is None, model set max length is the lenght of a data sample having largest number of contexts.
-- <code>CLEAN_PATH</code>: The path saving digital data after proprocessing stage.
+- <code>(*)CLEAN_PATH</code>: The path saving digital data after proprocessing stage.
+
+3. Training Model: <code>python train.py --data_path {CLEAN_DATA_PATH} --tokenizer {TOKENIZER_PATH}</code>
