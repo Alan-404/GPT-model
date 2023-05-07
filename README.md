@@ -40,3 +40,7 @@ Example:
 - <code>(*)CLEAN_PATH</code>: The path saving digital data after proprocessing stage.
 
 3. Training Model: <code>python train.py --data_path {CLEAN_DATA_PATH} --tokenizer {TOKENIZER_PATH} --checkpoint {CHECKPOINT_PATH} --n {N} --d_model {D_MODEL} --heads {HEADS} --d_ff {D_FF} --dropout_rate {DROPOUT_RATE} --eps {EPS} --activation {ACTIVATION} --epochs {EPOCHS} --batch_size {BATCH_SIZE} --mini_batch {MINI_BATCH} --learning_rate {LEARNING_RATE} --device {DEVICE} ...</code>
+
+## <b>Other</b>
+1. Interface of Chatbot:
+<img src="./assets/chatbot.png"/>
