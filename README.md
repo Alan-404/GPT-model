@@ -23,4 +23,6 @@ Example:
 - Corresponding Answer: <code>I am chatbot Lily</code>
 - Data Sample: <code>What is your name? <__sep__> I am chatbot Lily</code>
   
-2. Store all your data samples in txt file
+2. Store all your data samples in txt file <br>
+Example:
+<img src="./assets/data.png"/>
