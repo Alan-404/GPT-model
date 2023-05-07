@@ -16,4 +16,4 @@
 5. Install packages: <code>pip install requirements.txt</code>
 
 ## <b>Dataset Setup</b>
-If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <sep> {answer}</code>
+If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <__sep__> {answer}</code>
