@@ -1,0 +1,7 @@
+###
+POST http://localhost:8000/chat
+Content-Type: application/json
+
+{
+    "input": "Hi"
+}

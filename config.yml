@@ -1,0 +1,9 @@
+model: GPT
+parameters:
+- n: 12
+- heads: 12
+- d_model: 768
+- d_ff: 3072
+- dropout_rate: 0.1
+- eps: 0.02
+- activation: 'gelu'
