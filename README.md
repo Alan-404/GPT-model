@@ -17,7 +17,7 @@
 
 ## <b>Dataset Setup</b>
 1. If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <__sep__> {answer}</code>
-    <__sep__>: Separative Token
+    <__sep__>: Separative Token <br>
 Example: 
 - Question: <code>What is your name?</code>
 - Corresponding Answer: <code>I am chatbot Lily</code>
