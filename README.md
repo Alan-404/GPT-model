@@ -16,4 +16,11 @@
 5. Install packages: <code>pip install requirements.txt</code>
 
 ## <b>Dataset Setup</b>
-If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <__sep__> {answer}</code>
+1. If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <__sep__> {answer}</code>
+    <__sep__>: Separative Token
+Example: 
+- Question: <code>What is your name?</code>
+- Corresponding Answer: <code>I am chatbot Lily</code>
+- Data Sample: <code>What is your name? <__sep__> I am chatbot Lily</code>
+  
+2. Store all your data samples in txt file
