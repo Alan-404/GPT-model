@@ -35,8 +35,8 @@ Example:
 - <code>(*)ITERATIONS</code>: Maximum loop which is used for training Tokenizer.
 - <code>SIGMA</code>: SIGMA = (Num(tokens_whitespece)) / (Num(tokens_trained)), default is 2.
 
-2. Proprocessing Data - Digitize Text Data:: <code>python process.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --max_length {MAX_LENGTH} --clean_path {CLEAN_PATH}</code> <br>
+2. Proprocessing Data - Digitize Text Data: <code>python process.py --data_path {DATA_SAMPLE_PATH} --tokenizer_path {TOKENIZER_PATH} --max_length {MAX_LENGTH} --clean_path {CLEAN_PATH}</code> <br>
 - <code>MAX_LENGTH</code>: The number of contexts that you want to set, default is None. If its value is None, model set max length is the lenght of a data sample having largest number of contexts.
 - <code>(*)CLEAN_PATH</code>: The path saving digital data after proprocessing stage.
 
-3. Training Model: <code>python train.py --data_path {CLEAN_DATA_PATH} --tokenizer {TOKENIZER_PATH}</code>
+3. Training Model: <code>python train.py --data_path {CLEAN_DATA_PATH} --tokenizer {TOKENIZER_PATH} --checkpoint {CHECKPOINT_PATH} --n {N} --d_model {D_MODEL} --heads {HEADS} --d_ff {D_FF} --dropout_rate {DROPOUT_RATE} --eps {EPS} --activation {ACTIVATION} --epochs {EPOCHS} --batch_size {BATCH_SIZE} --mini_batch {MINI_BATCH} --learning_rate {LEARNING_RATE} --device {DEVICE} ...</code>
