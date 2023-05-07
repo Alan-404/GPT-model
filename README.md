@@ -1,6 +1,7 @@
 # Generative Pre - Trained Transformer (GPT) Model
 <b>Author:</b> Nguyen Duc Tri (Alan Nguyen) <br>
 <b>Github:</b> https://github.com/Alan-404 <br>
+<b>Linkedin: </b> https://www.linkedin.com/in/%C4%91%E1%BB%A9c-tr%C3%AD-nguy%E1%BB%85n-269845210/
 <b>Reference: </b>Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever (2018). <i>Improving Language Understanding by Generative Pre-Training.</i>
 
 ## <b>Architecture</b>
