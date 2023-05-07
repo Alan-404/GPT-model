@@ -11,4 +11,9 @@
 ## <b>Setup Environment</b>
 1. Clone this repo: <code>git clone https://github.com/Alan-404/GPT-model.git</code>
 2. CD into project: <code>cd GPT-model</code>
-3. Install packages: <code>pip install requirements.txt</code>
+3. (Optional) Create Conda Environment: <code>conda create --name {YOUR_PROJECT_NAME}</code>
+4. (Optional) Activation Conda Environment: <code>conda activate {YOUR_PROJECT_NAME}</code>
+5. Install packages: <code>pip install requirements.txt</code>
+
+## <b>Dataset Setup</b>
+If you have a pair question and corresponding answer, the data sample is look like: <code>{question} <sep> {answer}</code>
