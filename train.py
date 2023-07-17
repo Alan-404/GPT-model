@@ -3,7 +3,7 @@ from trainer import GPTTrainer
 from preprocessing.text import Tokenizer
 import pickle
 from model.utils.config import activations
-
+import pandas as pd
 from argparse import ArgumentParser
 
 
@@ -12,6 +12,7 @@ def load_data(path: str):
         return pickle.load(file)
 
 def program(tokenizer_path: str,
+            special_path :str,
             n: int,
             d_model: int,
             heads: int,
@@ -34,7 +35,11 @@ def program(tokenizer_path: str,
             experiment_name: str,
             run_id: str,
             run_name: str):
-    tokenizer = Tokenizer(tokenizer_path)
+    if special_path is None:
+        tokens = []
+    else:
+        tokens = list(pd.read_json(special_path).data.keys())
+    tokenizer = Tokenizer(tokenizer_path, tokens)
 
     data = load_data(data_path)
     gpt = GPTTrainer(len(tokenizer.dictionary), n, d_model, heads, d_ff, dropout_rate, eps, activations[activation], device, checkpoint)
@@ -62,6 +67,7 @@ if __name__ == "__main__":
     # require
     parser.add_argument("--tokenizer_path", type=str)
     parser.add_argument("--data_path", type=str)
+    parser.add_argument("--special_path", type=str, default=None)
     parser.add_argument("--checkpoint", type=str)
 
     # model config
@@ -100,6 +106,7 @@ if __name__ == "__main__":
     else:
         program(
             tokenizer_path=args.tokenizer_path,
+            special_path=args.special_path,
             n=args.n,
             d_model=args.d_model,
             heads=args.heads,

@@ -40,8 +40,7 @@ class Replacer:
 
 
 class Tokenizer:
-    def __init__(self, pretrained: str = None, 
-                 special_tokens: list = ["<pad>", "<oov>", "<start>", "<end>", "<delim>", "<sep>", "<new_line>", "<get_time>", "<owner_name>", "<chatbot_name>", "<open_camera>", "<close_camera>", "<list>"]) -> None:
+    def __init__(self, pretrained: str = None, special_tokens: list = []) -> None:
         self.cleaner = Cleaner()
         self.replacer = Replacer()
         self.vocab_dict = dict()

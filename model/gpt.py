@@ -1,11 +1,9 @@
 import torch
 from torch import Tensor
 import torch.nn as nn
-
 from .components.decoder import Decoder
 from .components.embedding import TextAndPositonEmbeded
 from .utils.mask import generate_look_ahead_mask
-
 from typing import Union, Callable
 
 class GPT(nn.Module):

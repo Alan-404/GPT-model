@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-import bentoml
 import torch
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from preprocessing.text import Tokenizer
 import re
-
+from trainer import GPTTrainer
+import pandas as pd
 
 device = torch.device('cuda' if torch.cuda.is_available() else "cpu")
 
@@ -26,10 +26,11 @@ app.add_middleware(
 )
 
 
-model = bentoml.pytorch.load_model("gpt:latest")
-model.to(device)
-tokenizer = Tokenizer("./tokenizer/dictionary.pkl")
+
+tokenizer = Tokenizer("./tokenizer/dictionary.pkl", special_tokens=list(pd.read_json("./tokenizer/data.json").data.keys()))
 end_token = tokenizer.dictionary.index("<end>")
+model = GPTTrainer(len(tokenizer.dictionary), device=device, checkpoint='./saved_models/gpt.pt')
+model.model.eval()
 
 class Input(BaseModel):
     input: str
@@ -44,7 +45,9 @@ def chatbot(data:Input):
     for word in result[0, len_seq:]:
         seq.append(tokenizer.dictionary[word.item()])
     seq = "".join(seq)
+    print(seq)
     seq = re.sub("</w>", " ", seq)
-    seq = tokenizer.decode_special_tokens(seq)
+    # seq = tokenizer.decode_special_tokens(seq)
+    
     seq = seq.capitalize()
     return {'response': seq}

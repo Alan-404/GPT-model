@@ -1,6 +1,5 @@
 import torch
 from torch import Tensor
-
 import torch.nn as nn
 from typing import Union, Callable
 
@@ -15,5 +14,3 @@ class PositionWiseFeedForwardNetworks(nn.Module):
         x = self.activation(x)
         x = self.output_layer(x)
         return x
-    def infer(self, x: Tensor):
-        return self(x)

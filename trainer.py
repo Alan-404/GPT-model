@@ -65,7 +65,7 @@ class GPTTrainer:
 
     def save_checkpoint(self, path: str):
         torch.save({
-            "model_state_dict": self.model.state_dict(),
+            "model_state_dict": self.model.cpu().state_dict(),
             "optimizer_state_dict": self.optimizer.state_dict(),
             "epoch": self.epoch,
             "history": self.history,

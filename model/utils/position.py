@@ -8,7 +8,7 @@ class PositionalEncoding(nn.Module):
         super().__init__()
         
     def __encode_ctx(self, n_ctx: int) -> Tensor:
-        pos = Variable(torch.arange(n_ctx))
+        pos = torch.arange(n_ctx)
         pos = pos.unsqueeze(-1)
         return pos.type(torch.float32)
     

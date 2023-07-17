@@ -13,5 +13,3 @@ class ResidualConnection(nn.Module):
         x += pre_x
         x = self.layer_norm(x)
         return x
-    def infer(self, x: Tensor, pre_x: Tensor):
-        return self(x, pre_x)
